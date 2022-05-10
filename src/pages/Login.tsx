@@ -1,18 +1,34 @@
-import React from 'react';
+import axios from 'axios';
+import React, {SyntheticEvent, useState} from 'react';
 import '../Login.css';
 
 const Login = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const submit = async (e : SyntheticEvent) => {
+        e.preventDefault();
+
+        await axios.post( 'login', {
+            email, 
+            password
+        } )
+    }
+
     return (
         <main className="form-signin">
-            <form>
+            <form onSubmit={submit}>
                 <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
-
                 <div className="form-floating">
-                <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com" />
+                <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com" 
+                    onChange={e => setEmail(e.target.value)}
+                />
                 <label htmlFor="floatingInput">Email address</label>
                 </div>
                 <div className="form-floating">
-                <input type="password" className="form-control" id="floatingPassword" placeholder="Password" />
+                <input type="password" className="form-control" id="floatingPassword" placeholder="Password" 
+                onChange={e => setPassword(e.target.value)}
+                />
                 <label htmlFor="floatingPassword">Password</label>
                 </div>
 

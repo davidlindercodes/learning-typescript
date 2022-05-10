@@ -19,7 +19,7 @@ class Register extends Component {
         e.preventDefault();
         console.log('processing');
         try {
-            await axios.post('http://localhost:8000/api/admin/register', {
+            await axios.post('register', {
                 first_name: this.firstName,
                 last_name: this.lastName, 
                 email: this.email, 
