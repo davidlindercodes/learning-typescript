@@ -1,3 +1,28 @@
+# learning-typescript
+
+Following this course: https://www.udemy.com/course/react-influencer/learn/lecture/25833402#overview 
+
+In this project I will build 3 frontend apps Admin, Ambassador and Checkout and they will consume a prebuild API.
+
+I will learn:
+
+Create a React project with Typescript
+
+Create a Next.js project with Typescript
+
+React Material UI
+
+Use Redux
+
+Use React Hooks
+
+Create public and private routes
+
+Restrict routes for unauthorized users
+
+Use Stripe
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -44,4 +69,3 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-# learning-typescript
