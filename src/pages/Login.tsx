@@ -1,10 +1,12 @@
 import axios from 'axios';
 import React, {SyntheticEvent, useState} from 'react';
+import { Navigate } from 'react-router-dom';
 import '../Login.css';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [redirect, setRedirect] = useState(false)
 
     const submit = async (e : SyntheticEvent) => {
         e.preventDefault();
@@ -12,7 +14,14 @@ const Login = () => {
         await axios.post( 'login', {
             email, 
             password
-        } )
+        }, {
+            withCredentials: true
+        })
+        setRedirect(true)
+    }
+
+    if (redirect) {
+        return <Navigate to={'/'}/>
     }
 
     return (
